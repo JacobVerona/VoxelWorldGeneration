@@ -25,6 +25,8 @@ public class ThreadManager : MonoBehaviour
 
         //Render pool
         multiThreadPools[1] = new MultiThreadPool(4);
+        
+        StartThreads ();
     }
 
     public static void RequestData (Func<object> generateData, Action<object> callback, ThreadType threadType)
@@ -44,7 +46,7 @@ public class ThreadManager : MonoBehaviour
         }
         
     }
-    private void Start ()
+    private void StartThreads ()
     {
         for (int i = 0; i < multiThreadPools.Length; i++)
         {
