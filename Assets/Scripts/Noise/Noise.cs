@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class Noise
 {
-    static FastNoise fastNoise = new FastNoise(0);
     public static float GenerateTerrainLayer (float x, float z, int octaves, float persistence, float smooth, int heightOfBlocks, int minHeightOfBlocks = 0)
     {
         float height = Noise.Normalize(minHeightOfBlocks, heightOfBlocks, BrownianMotion(x*smooth,z*smooth, octaves, persistence));
